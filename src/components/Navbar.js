@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { MdDarkMode } from 'react-icons/md';
+import { BsFillSunFill } from 'react-icons/bs';
 
-export default function Navbar() {
+export default function Navbar(props) {
   const [menuView, setMenuView] = useState(false);
 
   function iconToggler() {
@@ -20,8 +22,23 @@ export default function Navbar() {
             Meme Generator
           </h1>
         </div>
-        <div className='px-4 hidden md:block mx-5'>
-          <ul className='flex space-x-3 text-lg text-white'>
+        <div className='px-4 hidden md:flex mx-5'>
+          <div className='flex items-center justify-center mx-10'>
+            {props.lightMode ? (
+              <BsFillSunFill
+                size={30}
+                className='text-white cursor-pointer'
+                onClick={props.modeToggler}
+              />
+            ) : (
+              <MdDarkMode
+                size={30}
+                className='cursor-pointer'
+                onClick={props.modeToggler}
+              />
+            )}
+          </div>
+          <ul className='flex space-x-5 text-lg text-white'>
             <li className='cursor-pointer'>Home</li>
             <li className='cursor-pointer'>About</li>
           </ul>
@@ -44,13 +61,29 @@ export default function Navbar() {
         </div>
       </nav>
       {menuView && (
-        <div className='px-4 md:hidden bg-blue-500 text-center  border-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 border-2 py-2'>
-          <ul className='flex flex-col space-y-3 text-lg text-white justify-center items-center'>
-            <li className='cursor-pointer hover:text-xl hover:font-semibold hover:text-yellow-300'>
+        <div className='md:hidden bg-blue-500 text-center  border-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 border-2 py-2'>
+          <div className='flex items-center justify-center mx-10'>
+            {props.lightMode ? (
+              <BsFillSunFill
+                size={30}
+                className='text-white cursor-pointer'
+                onClick={props.modeToggler}
+              />
+            ) : (
+              <MdDarkMode
+                size={30}
+                className='cursor-pointer'
+                onClick={props.modeToggler}
+              />
+            )}
+          </div>
+          <hr className='my-2 mx-0 w-[100%]' />
+          <ul className='flex flex-col space-y-3 text-lg justify-center items-center'>
+            <li className='cursor-pointer hover:text-xl text-white hover:font-semibold hover:text-yellow-300'>
               Home
             </li>
 
-            <li className='cursor-pointer hover:text-xl hover:font-semibold hover:text-yellow-300'>
+            <li className='cursor-pointer hover:text-xl text-white hover:font-semibold hover:text-yellow-300'>
               About
             </li>
           </ul>
