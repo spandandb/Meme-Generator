@@ -15,14 +15,19 @@ export default function Form() {
       .then((data) => setImage(data.data.memes));
   }, []);
 
-  console.log(image);
-
   function randomImageGenerator() {
     const rv = Math.floor(Math.random() * image.length);
     setMeme((prevMeme) => {
       return { ...prevMeme, url: image[rv].url };
     });
   }
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setMeme((prevMeme) => {
+      return { ...prevMeme, [name]: value };
+    });
+  };
 
   return (
     <div className='flex flex-col justify-center items-center bg-slate-100 p-10 dark:bg-[#1E2021] dark:text-white'>
@@ -32,11 +37,17 @@ export default function Form() {
           type='text'
           className=' p-2 rounded-lg border border-1 border-gray-500 md:w-1/2 dark:bg-[#3B3B3B]'
           placeholder='Top text'
+          name='topText'
+          value={meme.topText}
+          onChange={handleChange}
         />
         <input
           type='text'
           className=' p-2 rounded-lg border border-1 border-gray-500 md:w-1/2 dark:bg-[#3B3B3B]'
           placeholder='Bottom text'
+          name='bottomText'
+          value={meme.bottomText}
+          onChange={handleChange}
         />
       </div>
       <div className='flex items-center justify-center g-slate-100'>
@@ -47,8 +58,14 @@ export default function Form() {
           Change Meme Image 🖼️
         </button>
       </div>
-      <div className='w-[80%] my-3 flex justify-center items-center'>
+      <div className='w-[80%] my-3 flex justify-center items-center relative overflow-hidden'>
+        <h3 className='absolute top-0 m-5 p-1 text-sm uppercase bg-black/50 text-white font-extrabold md:text-lg overflow-hidden rounded-md'>
+          {meme.topText}
+        </h3>
         <img src={meme.url} alt='' />
+        <h3 className='absolute bottom-0 m-5 p-1 text-sm uppercase bg-black/50 text-white font-extrabold md:text-xl overflow-hidden rounded-md'>
+          {meme.bottomText}
+        </h3>
       </div>
       {/* </form> */}
     </div>
