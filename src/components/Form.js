@@ -25,17 +25,17 @@ export default function Form() {
   }
 
   return (
-    <div className='flex flex-col justify-center items-center bg-slate-100 p-10'>
+    <div className='flex flex-col justify-center items-center bg-slate-100 p-10 dark:bg-[#1E2021] dark:text-white'>
       {/* <form action=''> */}
       <div className='space-x-4 w-full md:p-20 flex'>
         <input
           type='text'
-          className=' p-2 rounded-lg border border-1 border-gray-500 md:w-1/2'
+          className=' p-2 rounded-lg border border-1 border-gray-500 md:w-1/2 dark:bg-[#3B3B3B]'
           placeholder='Top text'
         />
         <input
           type='text'
-          className=' p-2 rounded-lg border border-1 border-gray-500 md:w-1/2'
+          className=' p-2 rounded-lg border border-1 border-gray-500 md:w-1/2 dark:bg-[#3B3B3B]'
           placeholder='Bottom text'
         />
       </div>
