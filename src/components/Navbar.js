@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { MdDarkMode } from 'react-icons/md';
 import { BsFillSunFill } from 'react-icons/bs';
+import { NavLink } from 'react-router-dom';
 
 export default function Navbar(props) {
   const [menuView, setMenuView] = useState(false);
@@ -27,34 +28,56 @@ export default function Navbar(props) {
             {props.lightMode ? (
               <BsFillSunFill
                 size={30}
-                className='text-white cursor-pointer'
+                className='text-white cursor-pointer hover:text-yellow-300'
                 onClick={props.modeToggler}
               />
             ) : (
               <MdDarkMode
                 size={30}
-                className='cursor-pointer'
+                className='cursor-pointer hover:text-yellow-300'
                 onClick={props.modeToggler}
               />
             )}
           </div>
           <ul className='flex space-x-5 text-lg text-white'>
-            <li className='cursor-pointer'>Home</li>
-            <li className='cursor-pointer'>About</li>
+            <li className='cursor-pointer '>
+              <NavLink
+                to='/'
+                className={({ isActive }) => {
+                  return isActive
+                    ? 'bg-purple-700 shadow-lg py-1 px-3 rounded-md'
+                    : 'py-1 px-3 hover:text-yellow-300';
+                }}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className='cursor-pointer'>
+              <NavLink
+                to='/about'
+                className={({ isActive }) => {
+                  return isActive
+                    ? 'bg-purple-700 shadow-lg py-1 px-3 rounded-md'
+                    : 'py-1 px-3 hover:text-yellow-300';
+                }}
+              >
+                About
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div className='px-4 mx-2 md:hidden'>
           {!menuView && (
             <AiOutlineMenu
               size={20}
-              className='hover:text-yellow-300 text-white'
+              className='hover:text-yellow-400 text-white'
               onClick={iconToggler}
             />
           )}
           {menuView && (
             <AiOutlineClose
               size={20}
-              className='hover:text-yellow-300 text-white'
+              className='hover:text-yellow-400 text-white'
               onClick={iconToggler}
             />
           )}
@@ -66,25 +89,39 @@ export default function Navbar(props) {
             {props.lightMode ? (
               <BsFillSunFill
                 size={30}
-                className='text-white cursor-pointer'
+                className='text-white cursor-pointer hover:text-yellow-400'
                 onClick={props.modeToggler}
               />
             ) : (
               <MdDarkMode
                 size={30}
-                className='cursor-pointer'
+                className='cursor-pointer hover:text-yellow-400'
                 onClick={props.modeToggler}
               />
             )}
           </div>
           <hr className='my-2 mx-0 w-[100%]' />
           <ul className='flex flex-col space-y-3 text-lg justify-center items-center'>
-            <li className='cursor-pointer hover:text-xl text-white hover:font-semibold hover:text-yellow-300'>
-              Home
+            <li className='cursor-pointer hover:text-xl text-white hover:bg-blue-700  w-[96%] rounded p-2'>
+              <NavLink
+                to='/'
+                className={({ isActive }) => {
+                  return isActive ? 'text-yellow-400' : '';
+                }}
+              >
+                Home
+              </NavLink>
             </li>
 
-            <li className='cursor-pointer hover:text-xl text-white hover:font-semibold hover:text-yellow-300'>
-              About
+            <li className='cursor-pointer hover:text-xl text-white hover:bg-blue-700 hover:text-yellow-300 w-[96%] rounded p-2'>
+              <NavLink
+                to='/about'
+                className={({ isActive }) => {
+                  return isActive ? 'text-yellow-400' : '';
+                }}
+              >
+                About
+              </NavLink>
             </li>
           </ul>
         </div>
