@@ -32,10 +32,10 @@ export default function Form() {
   return (
     <div className='flex flex-col justify-center items-center bg-slate-100 p-10 dark:bg-[#1E2021] dark:text-white'>
       {/* <form action=''> */}
-      <div className='space-x-4 w-full md:p-20 flex'>
+      <div className='sm:space-x-4 w-full md:p-20 flex flex-col sm:flex-row justify-center items-center'>
         <input
           type='text'
-          className=' p-2 rounded-lg border border-1 border-gray-500 md:w-1/2 dark:bg-[#3B3B3B]'
+          className='flex my-2 justify-center sm:block p-2 rounded-lg border border-1 mx-auto border-gray-500 w-auto sm:w-1/2 dark:bg-[#3B3B3B]'
           placeholder='Top text'
           name='topText'
           value={meme.topText}
@@ -43,7 +43,7 @@ export default function Form() {
         />
         <input
           type='text'
-          className=' p-2 rounded-lg border border-1 border-gray-500 md:w-1/2 dark:bg-[#3B3B3B]'
+          className='flex justify-center my-2 sm:block p-2 rounded-lg border border-1 mx-auto border-gray-500 sm:w-1/2 dark:bg-[#3B3B3B]'
           placeholder='Bottom text'
           name='bottomText'
           value={meme.bottomText}
