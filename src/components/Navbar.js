@@ -102,22 +102,26 @@ export default function Navbar(props) {
           </div>
           <hr className='my-2 mx-0 w-[100%]' />
           <ul className='flex flex-col space-y-3 text-lg justify-center items-center'>
-            <li className='cursor-pointer hover:text-xl text-white hover:bg-blue-700  w-[96%] rounded p-2'>
+            <li className='cursor-pointer hover:text-xl text-white   w-[96%] rounded p-2'>
               <NavLink
                 to='/'
                 className={({ isActive }) => {
-                  return isActive ? 'text-yellow-400' : '';
+                  return isActive
+                    ? 'text-yellow-400 p-2'
+                    : 'hover:bg-blue-700 p-2 rounded';
                 }}
               >
                 Home
               </NavLink>
             </li>
 
-            <li className='cursor-pointer hover:text-xl text-white hover:bg-blue-700 hover:text-yellow-300 w-[96%] rounded p-2'>
+            <li className='cursor-pointer text-white hover:text-xl text-whitehover:text-yellow-300 w-[96%] rounded p-2'>
               <NavLink
                 to='/about'
                 className={({ isActive }) => {
-                  return isActive ? 'text-yellow-400' : '';
+                  return isActive
+                    ? 'text-yellow-400 p-2'
+                    : 'hover:bg-blue-700 p-2 rounded';
                 }}
               >
                 About

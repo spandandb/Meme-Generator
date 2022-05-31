@@ -15,17 +15,10 @@ function App() {
       <BrowserRouter>
         <Navbar lightMode={lightMode} modeToggler={modeToggler} />
         <Routes>
-          <Route
-            path='/'
-            element={
-              <>
-                <Form />
-                <Footer />
-              </>
-            }
-          />
+          <Route path='/' element={<Form />} />
           <Route path='/about' element={<About />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
