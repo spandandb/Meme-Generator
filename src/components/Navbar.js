@@ -102,26 +102,26 @@ export default function Navbar(props) {
           </div>
           <hr className='my-2 mx-0 w-[100%]' />
           <ul className='flex flex-col space-y-3 text-lg justify-center items-center'>
-            <li className='cursor-pointer hover:text-xl text-white   w-[96%] rounded p-2'>
+            <li className='cursor-pointer text-white   w-fit rounded p-2'>
               <NavLink
                 to='/Meme-Generator/'
                 className={({ isActive }) => {
                   return isActive
                     ? 'text-yellow-400 p-2'
-                    : 'hover:bg-blue-700 p-2 rounded';
+                    : 'hover:bg-blue-700 p-2 rounded hover:text-xl';
                 }}
               >
                 Home
               </NavLink>
             </li>
 
-            <li className='cursor-pointer text-white hover:text-xl text-whitehover:text-yellow-300 w-[96%] rounded p-2'>
+            <li className='cursor-pointer text-white text-whitehover:text-yellow-300 w-fit rounded p-2'>
               <NavLink
                 to='/Meme-Generator/about'
                 className={({ isActive }) => {
                   return isActive
-                    ? 'text-yellow-400 p-2'
-                    : 'hover:bg-blue-700 p-2 rounded';
+                    ? 'text-yellow-400 p-2 '
+                    : 'hover:bg-blue-700 p-2 rounded hover:text-xl';
                 }}
               >
                 About

@@ -52,7 +52,7 @@ export default function Form() {
       </div>
       <div className='flex items-center justify-center g-slate-100'>
         <button
-          className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white w-fit my-6 mx-2 px-4 py-2 rounded-lg border border-1 border-gray-500 font-semibold hover:shadow-lg hover:shadow-purple-500'
+          className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white w-fit my-6 mx-2 px-4 py-2 rounded-lg border border-1 border-gray-500 font-semibold active:shadow-lg active:shadow-purple-500 sm:hover:shadow-lg sm:hover:shadow-purple-500'
           onClick={randomImageGenerator}
         >
           Change Meme Image 🖼️
