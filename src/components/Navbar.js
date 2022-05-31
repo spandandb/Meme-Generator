@@ -42,7 +42,7 @@ export default function Navbar(props) {
           <ul className='flex space-x-5 text-lg text-white'>
             <li className='cursor-pointer '>
               <NavLink
-                to='/'
+                to='/Meme-Generator/'
                 className={({ isActive }) => {
                   return isActive
                     ? 'bg-purple-700 shadow-lg py-1 px-3 rounded-md'
@@ -54,7 +54,7 @@ export default function Navbar(props) {
             </li>
             <li className='cursor-pointer'>
               <NavLink
-                to='/about'
+                to='/Meme-Generator/about'
                 className={({ isActive }) => {
                   return isActive
                     ? 'bg-purple-700 shadow-lg py-1 px-3 rounded-md'
@@ -104,7 +104,7 @@ export default function Navbar(props) {
           <ul className='flex flex-col space-y-3 text-lg justify-center items-center'>
             <li className='cursor-pointer hover:text-xl text-white   w-[96%] rounded p-2'>
               <NavLink
-                to='/'
+                to='/Meme-Generator/'
                 className={({ isActive }) => {
                   return isActive
                     ? 'text-yellow-400 p-2'
@@ -117,7 +117,7 @@ export default function Navbar(props) {
 
             <li className='cursor-pointer text-white hover:text-xl text-whitehover:text-yellow-300 w-[96%] rounded p-2'>
               <NavLink
-                to='/about'
+                to='/Meme-Generator/about'
                 className={({ isActive }) => {
                   return isActive
                     ? 'text-yellow-400 p-2'

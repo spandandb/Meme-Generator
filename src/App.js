@@ -15,8 +15,8 @@ function App() {
       <BrowserRouter>
         <Navbar lightMode={lightMode} modeToggler={modeToggler} />
         <Routes>
-          <Route path='/' element={<Form />} />
-          <Route path='/about' element={<About />} />
+          <Route path='/Meme-Generator/' element={<Form />} />
+          <Route path='/Meme-Generator/about' element={<About />} />
         </Routes>
         <Footer />
       </BrowserRouter>
