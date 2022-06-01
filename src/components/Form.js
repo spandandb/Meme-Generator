@@ -5,7 +5,7 @@ export default function Form() {
   const [meme, setMeme] = useState({
     topText: '',
     bottomText: '',
-    url: 'https://i.imgflip.com/30b1gx.jpg'
+    url: 'https://i.imgflip.com/1ihzfe.jpg'
   });
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function Form() {
         <h3 className='absolute top-0 m-5 p-1 text-sm uppercase bg-black/50 text-white font-extrabold md:text-lg overflow-hidden rounded-md'>
           {meme.topText}
         </h3>
-        <img src={meme.url} alt='' />
+        <img src={meme.url} alt='' className='rounded-lg' />
         <h3 className='absolute bottom-0 m-5 p-1 text-sm uppercase bg-black/50 text-white font-extrabold md:text-xl overflow-hidden rounded-md'>
           {meme.bottomText}
         </h3>
