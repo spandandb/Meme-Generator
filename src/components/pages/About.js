@@ -39,7 +39,7 @@ export default function About() {
               />
             </a>
             <a
-              href='https://github.com/spandandb'
+              href='https://www.facebook.com/spandan.dasbarman'
               target='_blank'
               rel='noreferrer'
               title={'Facebook'}
@@ -50,7 +50,7 @@ export default function About() {
               />
             </a>
             <a
-              href='https://github.com/spandandb'
+              href='https://www.linkedin.com/in/spandan-das-barman-ba0970239/'
               target='_blank'
               rel='noreferrer'
               title={'LinkedIn'}
@@ -61,7 +61,7 @@ export default function About() {
               />
             </a>
             <a
-              href='https://github.com/spandandb'
+              href='https://www.instagram.com/spandy_db/'
               target='_blank'
               rel='noreferrer'
               title={'Instagram'}
